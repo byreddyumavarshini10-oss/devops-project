@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Frontend Web Development with DevOps</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fa;
+color:#333;
+transition:.4s;
+}
+
+/*=====================
+NAVIGATION
+======================*/
+
+header{
+
+position:sticky;
+top:0;
+z-index:1000;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 70px;
+
+background:linear-gradient(135deg,#2193b0,#6dd5ed);
+
+box-shadow:0 4px 15px rgba(0,0,0,.2);
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:bold;
+color:white;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-size:18px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:yellow;
+
+}
+
+#theme{
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:20px;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:bold;
+
+background:white;
+
+color:#2193b0;
+
+}
+
+/*=====================
+HERO SECTION
+======================*/
+
+.hero{
+
+padding:80px;
+
+}
+
+.hero-content{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:60px;
+
+}
+
+.hero-text{
+
+flex:1;
+
+}
+
+.hero-text h1{
+
+font-size:55px;
+
+color:#0077b6;
+
+margin-bottom:20px;
+
+}
+
+.hero-text h3{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#444;
+
+}
+
+.hero-text p{
+
+font-size:21px;
+
+line-height:34px;
+
+margin-bottom:35px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.btn{
+
+padding:15px 35px;
+
+background:#0077b6;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#023e8a;
+
+transform:translateY(-3px);
+
+}
+
+.btn2{
+
+padding:15px 35px;
+
+background:#00b894;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.btn2:hover{
+
+background:#009970;
+
+transform:translateY(-3px);
+
+}
+
+.hero-image{
+
+flex:1;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:430px;
+
+animation:float 3s infinite ease-in-out;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-top:70px;
+
+color:#0077b6;
+
+margin-bottom:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🚀 DevOps CI/CD
+
+</div>
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#pipeline">Pipeline</a>
+
+<a href="#technology">Technology</a>
+
+<a href="#features">Features</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<button id="theme">
+
+🌙 Dark Mode
+
+</button>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h1>
+
+Frontend Web Development
+
+</h1>
+
+<h3>
+
+Continuous Integration & Continuous Deployment
+
+</h3>
+
+<p>
+
+This project demonstrates the implementation of
+DevOps practices using Git, GitHub and Netlify.
+
+Whenever a developer pushes code to GitHub,
+Netlify automatically builds and deploys
+the latest version of the website.
+
+This workflow eliminates manual deployment
+and demonstrates a simple CI/CD pipeline.
+
+</p>
+
+<div class="buttons">
+
+<a href="#" class="btn">
+
+🚀 Explore Project
+
+</a>
+
+<a href="#" class="btn2">
+
+💻 GitHub
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     CI/CD PIPELINE
+========================= -->
+
+<section id="pipeline">
+
+<h2 class="section-title">
+
+🚀 CI/CD Pipeline Workflow
+
+</h2>
+
+<style>
+
+.timeline{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+padding:40px;
+
+}
+
+.step{
+
+width:170px;
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.step:hover{
+
+transform:translateY(-10px);
+
+}
+
+.step h3{
+
+margin-top:15px;
+
+color:#0077b6;
+
+}
+
+.arrow{
+
+font-size:40px;
+
+color:#0077b6;
+
+font-weight:bold;
+
+}
+
+.icon{
+
+font-size:55px;
+
+}
+
+</style>
+
+<div class="timeline">
+
+<div class="step">
+
+<div class="icon">💻</div>
+
+<h3>VS Code</h3>
+
+<p>Develop Website</p>
+
+</div>
+
+<div class="arrow">➡</div>
+
+<div class="step">
+
+<div class="icon">📝</div>
+
+<h3>Git</h3>
+
+<p>Version Control</p>
+
+</div>
+
+<div class="arrow">➡</div>
+
+<div class="step">
+
+<div class="icon">☁️</div>
+
+<h3>GitHub</h3>
+
+<p>Push Source Code</p>
+
+</div>
+
+<div class="arrow">➡</div>
+
+<div class="step">
+
+<div class="icon">🚀</div>
+
+<h3>Netlify</h3>
+
+<p>Auto Deployment</p>
+
+</div>
+
+<div class="arrow">➡</div>
+
+<div class="step">
+
+<div class="icon">🌍</div>
+
+<h3>Live Website</h3>
+
+<p>Published</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TECHNOLOGIES
+========================= -->
+
+<section id="technology">
+
+<h2 class="section-title">
+
+💻 Technologies Used
+
+</h2>
+
+<style>
+
+.tech-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+padding:50px;
+
+}
+
+.tech{
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.12);
+
+transition:.4s;
+
+}
+
+.tech:hover{
+
+transform:scale(1.05);
+
+}
+
+.tech h2{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.tech h3{
+
+color:#0077b6;
+
+margin-bottom:15px;
+
+}
+
+</style>
+
+<div class="tech-container">
+
+<div class="tech">
+
+<h2>🌐</h2>
+
+<h3>HTML5</h3>
+
+<p>
+
+Structure of the webpage.
+
+</p>
+
+</div>
+
+<div class="tech">
+
+<h2>🎨</h2>
+
+<h3>CSS3</h3>
+
+<p>
+
+Styling and animations.
+
+</p>
+
+</div>
+
+<div class="tech">
+
+<h2>⚡</h2>
+
+<h3>JavaScript</h3>
+
+<p>
+
+Interactive components.
+
+</p>
+
+</div>
+
+<div class="tech">
+
+<h2>📝</h2>
+
+<h3>Git</h3>
+
+<p>
+
+Version Control System.
+
+</p>
+
+</div>
+
+<div class="tech">
+
+<h2>☁️</h2>
+
+<h3>GitHub</h3>
+
+<p>
+
+Remote Repository.
+
+</p>
+
+</div>
+
+<div class="tech">
+
+<h2>🚀</h2>
+
+<h3>Netlify</h3>
+
+<p>
+
+Automatic Deployment.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section id="features">
+
+<h2 class="section-title">
+
+⭐ Project Features
+
+</h2>
+
+<style>
+
+.feature-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+padding:50px;
+
+}
+
+.feature{
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.12);
+
+transition:.4s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-10px);
+
+}
+
+.feature h3{
+
+color:#0077b6;
+
+margin-bottom:15px;
+
+}
+
+</style>
+
+<div class="feature-container">
+
+<div class="feature">
+
+<h3>🔄 Continuous Integration</h3>
+
+<p>
+
+Every code update is integrated automatically.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🚀 Continuous Deployment</h3>
+
+<p>
+
+Website is automatically deployed.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>📂 Version Control</h3>
+
+<p>
+
+Tracks every source code change.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>☁️ Cloud Hosting</h3>
+
+<p>
+
+Hosted using Netlify.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>📱 Responsive Design</h3>
+
+<p>
+
+Works on desktop and mobile devices.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>⚡ Fast Deployment</h3>
+
+<p>
+
+Changes appear online within seconds.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     PROJECT STATISTICS
+========================= -->
+
+<section id="statistics">
+
+<h2 class="section-title">
+
+📊 Project Statistics
+
+</h2>
+
+<style>
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+padding:50px;
+
+}
+
+.stat{
+
+background:linear-gradient(135deg,#00b4d8,#0077b6);
+
+color:white;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.stat:hover{
+
+transform:scale(1.05);
+
+}
+
+.stat h1{
+
+font-size:55px;
+
+margin-bottom:10px;
+
+}
+
+.stat p{
+
+font-size:20px;
+
+}
+
+</style>
+
+<div class="stats">
+
+<div class="stat">
+
+<h1>100%</h1>
+
+<p>Automation</p>
+
+</div>
+
+<div class="stat">
+
+<h1>6+</h1>
+
+<p>Technologies Used</p>
+
+</div>
+
+<div class="stat">
+
+<h1>10+</h1>
+
+<p>Git Commits</p>
+
+</div>
+
+<div class="stat">
+
+<h1>24/7</h1>
+
+<p>Website Availability</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT PROJECT
+========================= -->
+
+<section id="about">
+
+<h2 class="section-title">
+
+📖 About This Project
+
+</h2>
+
+<style>
+
+.about{
+
+width:85%;
+
+margin:auto;
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+font-size:20px;
+
+line-height:35px;
+
+margin-bottom:70px;
+
+}
+
+</style>
+
+<div class="about">
+
+<p>
+
+This project demonstrates the implementation of
+Frontend Web Development integrated with DevOps
+practices.
+
+The website is developed using HTML, CSS and JavaScript.
+
+Git is used for version control,
+GitHub stores the source code,
+and Netlify automatically deploys every update,
+demonstrating a Continuous Integration and
+Continuous Deployment (CI/CD) pipeline.
+
+This project helps students understand how
+automation improves software delivery and reduces
+manual deployment efforts.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<h2 class="section-title">
+
+📞 Contact
+
+</h2>
+
+<style>
+
+.contact{
+
+width:70%;
+
+margin:auto;
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+margin-bottom:80px;
+
+}
+
+.contact input{
+
+width:100%;
+
+padding:15px;
+
+margin-top:20px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:18px;
+
+}
+
+.contact textarea{
+
+width:100%;
+
+height:150px;
+
+padding:15px;
+
+margin-top:20px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:18px;
+
+resize:none;
+
+}
+
+.contact button{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:#0077b6;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+.contact button:hover{
+
+background:#023e8a;
+
+}
+
+</style>
+
+<div class="contact">
+
+<input type="text" placeholder="Enter Your Name">
+
+<input type="email" placeholder="Enter Your Email">
+
+<textarea placeholder="Enter Your Message"></textarea>
+
+<button>
+
+Send Message 🚀
+
+</button>
+
+</div>
+
+</section>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<style>
+
+footer{
+
+background:linear-gradient(135deg,#0077b6,#00b4d8);
+
+color:white;
+
+padding:50px 20px;
+
+text-align:center;
+
+}
+
+footer h2{
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+font-size:18px;
+
+margin:8px;
+
+}
+
+.social{
+
+margin-top:20px;
+
+}
+
+.social a{
+
+text-decoration:none;
+
+font-size:30px;
+
+margin:15px;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.social a:hover{
+
+color:yellow;
+
+}
+
+#topBtn{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+padding:15px 18px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:50%;
+
+background:#0077b6;
+
+color:white;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+}
+
+#topBtn:hover{
+
+background:#023e8a;
+
+}
+
+/* =====================
+   DARK MODE
+===================== */
+
+.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+.dark header{
+
+background:#111;
+
+}
+
+.dark .step,
+.dark .tech,
+.dark .feature,
+.dark .stat,
+.dark .about,
+.dark .contact{
+
+background:#222;
+
+color:white;
+
+}
+
+.dark input,
+.dark textarea{
+
+background:#333;
+
+color:white;
+
+border:1px solid #555;
+
+}
+
+.dark footer{
+
+background:#000;
+
+}
+
+</style>
+
+<h2>
+
+🚀 Frontend Web Development with DevOps
+
+</h2>
+
+<p>
+
+Continuous Integration & Continuous Deployment Project
+
+</p>
+
+<p>
+
+Developed using HTML • CSS • JavaScript • Git • GitHub • Netlify
+
+</p>
+
+<div class="social">
+
+<a href="#">🌐</a>
+
+<a href="#">💻</a>
+
+<a href="#">📧</a>
+
+</div>
+
+<p style="margin-top:20px;">
+
+© 2026 DevOps Student Project
+
+</p>
+
+</footer>
+
+<button id="topBtn">
+
+⬆
+
+</button>
+
+<script>
+
+/* =====================
+DARK MODE
+===================== */
+
+const theme=document.getElementById("theme");
+
+theme.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+
+theme.innerHTML="☀ Light Mode";
+
+}
+else{
+
+theme.innerHTML="🌙 Dark Mode";
+
+}
+
+}
+
+/* =====================
+SCROLL BUTTON
+===================== */
+
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}
+else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
